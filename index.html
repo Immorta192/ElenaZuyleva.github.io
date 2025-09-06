@@ -320,19 +320,18 @@
         <div>
           <h2>Оставить заявку</h2>
           <p>Выберите курс — ответим в течение 24 часов и пришлём программу и расписание.</p>
-          <form id="leadForm" action="https://formspree.io/f/xvgbdogz" method="POST">
-            <!-- Простая и совместимая с Formspree форма -->
+          <form action="https://formspree.io/f/xvgbdogz" method="POST" autocomplete="off">
             <label>
               Ваше имя:
-              <input type="text" name="name" placeholder="Иван Петров">
+              <input type="text" name="name">
             </label>
             <label>
               Email:
-              <input type="email" name="email" placeholder="you@example.com">
+              <input type="email" name="email" required>
             </label>
             <label>
               Телеграм/WhatsApp:
-              <input type="text" name="messenger" placeholder="@username или +7 900 000-00-00">
+              <input type="text" name="messenger">
             </label>
             <label>
               Курс:
@@ -351,11 +350,11 @@
             </label>
             <label>
               Удобное время:
-              <input type="text" name="time_pref" placeholder="вечер будни / выходные / будни утро">
+              <input type="text" name="time_pref">
             </label>
             <label>
               Сообщение:
-              <textarea name="message" placeholder="Пару слов о себе и своих целях"></textarea>
+              <textarea name="message"></textarea>
             </label>
             <button class="btn btn--gold" type="submit">Отправить заявку</button>
           </form>
