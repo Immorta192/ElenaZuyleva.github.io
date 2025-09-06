@@ -12,12 +12,12 @@
   <meta property="og:description" content="3 авторских курса онлайн. Места ограничены.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://example.com/cover.jpg"><!-- Замените обложку -->
-  <meta name="theme-color" content="#0b0b0c">
+  <meta name="theme-color" content="#2d5a27">
   <style>
     /* Основные переменные цветов и размеров для сайта */
     :root{
-      --bg:#0b0b0c; --ink:#f6f6f7; --muted:#b9bcc3;
-      --acc:#c8a86e; --card:#121316; --line:#22252a;
+      --bg:#ffffff; --ink:#1a1a1a; --muted:#666666;
+      --acc:#2d5a27; --card:#f8f9fa; --line:#e0e0e0;
       --pad: clamp(16px, 2.5vw, 32px);
       --w: min(1120px, 92vw);
     }
@@ -27,33 +27,34 @@
     a{color:var(--ink);text-decoration:none}
     img{max-width:100%;height:auto;display:block}
     .wrap{width:var(--w);margin:0 auto} /* Контейнер для центрирования контента */
-    header{position:fixed;inset:0 0 auto 0;z-index:50;background:linear-gradient(180deg,rgba(11,11,12,.9),rgba(11,11,12,.4) 60%,transparent)} /* Фиксированная шапка */
+    header{position:fixed;inset:0 0 auto 0;z-index:50;background:linear-gradient(180deg,rgba(45,90,39,.95),rgba(45,90,39,.8) 60%,transparent);backdrop-filter:blur(10px)} /* Фиксированная шапка */
     nav{display:flex;align-items:center;justify-content:space-between;padding:14px var(--pad)} /* Меню навигации */
-    .brand{font-family:"Playfair Display",serif;font-weight:700;letter-spacing:.5px} /* Логотип */
-    .brand b{color:var(--acc)}
+    .brand{font-family:"Playfair Display",serif;font-weight:700;letter-spacing:.5px;color:#ffffff} /* Логотип */
+    .brand b{color:#ffffff;opacity:.9}
     .menu{display:flex;gap:18px;font-size:15px} /* Ссылки в меню */
-    .menu a{opacity:.9}
+    .menu a{opacity:.9;color:#ffffff}
     .menu a:hover{opacity:1}
-    .btn{display:inline-flex;gap:10px;align-items:center;justify-content:center;border:1px solid var(--line);padding:10px 16px;border-radius:999px;background:#16181d;cursor:pointer} /* Общий стиль кнопок */
-    .btn--gold{background:var(--acc);color:#111;font-weight:600;border-color:#000} /* Золотая кнопка */
-    .btn--ghost{background:transparent} /* Прозрачная кнопка */
+    .btn{display:inline-flex;gap:10px;align-items:center;justify-content:center;border:1px solid var(--line);padding:10px 16px;border-radius:999px;background:var(--card);cursor:pointer} /* Общий стиль кнопок */
+    .btn--gold{background:var(--acc);color:#ffffff;font-weight:600;border-color:var(--acc)} /* Изумрудная кнопка */
+    .btn--ghost{background:transparent;border-color:var(--acc);color:var(--acc)} /* Прозрачная кнопка */
     .hero{position:relative;min-height:88vh;display:grid;place-items:center;isolation:isolate} /* Главный экран (hero) */
+    .hero-gradient{position:absolute;inset:0;background:linear-gradient(135deg, rgba(45,90,39,.6) 0%, rgba(45,90,39,.4) 20%, rgba(45,90,39,.2) 40%, rgba(255,255,255,.1) 70%, rgba(255,255,255,.3) 100%);z-index:-2} /* Дополнительный градиент */
     .hero::before{
       content:"";position:absolute;inset:0;
       background:url('https://images.unsplash.com/photo-1523246192220-3f072d01048e?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat; /* Фоновое изображение hero */
       filter:grayscale(10%) contrast(105%);
-      z-index:-2;
+      z-index:-3;
     }
     .hero::after{
       content:"";position:absolute;inset:0;
-      background:radial-gradient(1200px 600px at 20% 30%, rgba(200,168,110,.35), transparent 60%),
-                 linear-gradient(180deg, rgba(11,11,12,.7), rgba(11,11,12,.9));
+      background:radial-gradient(1200px 600px at 20% 30%, rgba(45,90,39,.8), rgba(45,90,39,.4) 40%, transparent 70%),
+                 linear-gradient(180deg, rgba(45,90,39,.7), rgba(45,90,39,.5) 20%, rgba(45,90,39,.3) 35%, rgba(45,90,39,.15) 50%, rgba(255,255,255,.2) 70%, rgba(255,255,255,.6) 85%, rgba(255,255,255,.9));
       z-index:-1;
     }
     .hero .wrap{display:grid;gap:22px;padding:140px var(--pad) 64px} /* Контент hero */
     .kicker{color:var(--muted);text-transform:uppercase;letter-spacing:.22em;font-size:12px} /* Маленький подзаголовок */
     h1{font-family:"Playfair Display",serif;font-size:clamp(36px,6.2vw,72px);line-height:1.05;margin:0} /* Главный заголовок */
-    .lead{font-size:clamp(16px,2.1vw,20px);color:#dfe2ea;max-width:64ch} /* Краткое описание */
+    .lead{font-size:clamp(16px,2.1vw,20px);color:var(--ink);max-width:64ch} /* Краткое описание */
     .cta{display:flex;gap:12px;flex-wrap:wrap} /* Контейнер для кнопок hero */
     section{padding:72px 0;border-top:1px solid var(--line)} /* Секции сайта */
     h2{font-family:"Playfair Display",serif;font-weight:700;font-size:clamp(26px,3.6vw,40px);margin:0 0 18px} /* Заголовки секций */
@@ -64,7 +65,7 @@
     .grid--4{grid-template-columns:repeat(4,1fr)} /* Сетка из 4 колонок */
     @media (max-width:1080px){.grid--4{grid-template-columns:repeat(2,1fr)}}
     @media (max-width:640px){.grid--4{grid-template-columns:1fr}}
-    .badge{display:inline-block;background:#1c1f25;border:1px solid var(--line);padding:4px 10px;border-radius:999px;font-size:12px;color:#d8dbe3} /* Значки */
+    .badge{display:inline-block;background:var(--card);border:1px solid var(--line);padding:4px 10px;border-radius:999px;font-size:12px;color:var(--ink)} /* Значки */
     .price{font-weight:700;font-size:22px} /* Цена */
     .video{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#000} /* Видео-блок */
     .video iframe,.video video{position:absolute;inset:0;width:100%;height:100%}
@@ -74,16 +75,16 @@
     .row{display:grid;gap:12px;grid-template-columns:1fr 1fr} /* Ряды в форме */
     @media (max-width:720px){.row{grid-template-columns:1fr}}
     label{font-size:14px;color:var(--muted)}
-    input,select,textarea{width:100%;padding:12px 14px;background:#0f1115;border:1px solid var(--line);border-radius:10px;color:var(--ink);font:inherit}
+    input,select,textarea{width:100%;padding:12px 14px;background:var(--bg);border:1px solid var(--line);border-radius:10px;color:var(--ink);font:inherit}
     textarea{min-height:120px;resize:vertical}
     .hint{color:var(--muted);font-size:12px}
     .ok{display:none;margin-top:8px;color:#66d19e;font-weight:600} /* Сообщение об успехе */
     .err{display:none;margin-top:8px;color:#ff7a7a;font-weight:600} /* Сообщение об ошибке */
     .hp{position:absolute;left:-5000px;opacity:0} /* Honeypot для спама */
     footer{padding:36px var(--pad);color:var(--muted);border-top:1px solid var(--line);text-align:center} /* Подвал */
-    .stickyCTA{position:fixed;right:16px;bottom:16px;z-index:40;padding:8px 12px;font-size:12px;border-radius:20px;width:auto;min-width:120px;background:white;color:#111;border:1px solid #ddd} /* Плавающая кнопка */
+    .stickyCTA{position:fixed;right:16px;bottom:16px;z-index:40;padding:8px 12px;font-size:12px;border-radius:20px;width:auto;min-width:120px;background:var(--acc);color:#ffffff;border:1px solid var(--acc)} /* Плавающая кнопка */
     .ul{margin:0 0 0 18px} /* Список */
-    details{background:#121318;border:1px solid var(--line);border-radius:12px;padding:14px} /* FAQ */
+    details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px} /* FAQ */
     summary{cursor:pointer;font-weight:600}
     /* --- ДОБАВЛЕНО ДЛЯ ВЫРАВНИВАНИЯ КНОПОК --- */
     /* Кнопки в hero (секция с заголовком) */
@@ -141,7 +142,7 @@
         left: 0;
         right: 0;
         z-index: 50;
-        background: rgba(11,11,12,0.95);
+        background: rgba(45,90,39,0.95);
         backdrop-filter: blur(10px);
       }
       nav {
@@ -301,9 +302,9 @@
         border-radius: 20px;
         width: auto;
         min-width: 120px;
-        background: white;
-        color: #111;
-        border: 1px solid #ddd;
+        background: var(--acc);
+        color: #ffffff;
+        border: 1px solid var(--acc);
       }
       /* Подвал */
       footer {
@@ -417,6 +418,7 @@
   <main>
     <!-- HERO — главный экран с заголовком, описанием и кнопками -->
     <section class="hero" id="top">
+      <div class="hero-gradient"></div>
       <div class="wrap">
         <div class="kicker">Актриса • Ведущая • Тренер по голосу и публичным выступлениям</div>
         <h1>Авторские курсы по ораторскому мастерству и публичным выступлениям</h1>
