@@ -81,7 +81,7 @@
     .err{display:none;margin-top:8px;color:#ff7a7a;font-weight:600} /* Сообщение об ошибке */
     .hp{position:absolute;left:-5000px;opacity:0} /* Honeypot для спама */
     footer{padding:36px var(--pad);color:var(--muted);border-top:1px solid var(--line);text-align:center} /* Подвал */
-    .stickyCTA{position:fixed;right:16px;bottom:16px;z-index:40} /* Плавающая кнопка */
+    .stickyCTA{position:fixed;right:16px;bottom:16px;z-index:40;padding:8px 12px;font-size:12px;border-radius:20px;width:auto;min-width:120px;background:white;color:#111;border:1px solid #ddd} /* Плавающая кнопка */
     .ul{margin:0 0 0 18px} /* Список */
     details{background:#121318;border:1px solid var(--line);border-radius:12px;padding:14px} /* FAQ */
     summary{cursor:pointer;font-weight:600}
@@ -296,9 +296,14 @@
       .stickyCTA {
         right: 16px;
         bottom: 16px;
-        padding: 12px 16px;
-        font-size: 14px;
-        border-radius: 25px;
+        padding: 8px 12px;
+        font-size: 12px;
+        border-radius: 20px;
+        width: auto;
+        min-width: 120px;
+        background: white;
+        color: #111;
+        border: 1px solid #ddd;
       }
       /* Подвал */
       footer {
@@ -525,12 +530,12 @@
         </div>
 
         <!-- Дополнительные бонусы -->
-        <div class="card" style="margin-top:18px">
-          <div class="grid" style="grid-template-columns:repeat(4,1fr)">
-            <div><span class="kicker">Бонус</span><div>Бесплатный вводный урок</div></div>
-            <div><span class="kicker">Материалы</span><div>Полный доступ к программе, чеклисты</div></div>
-            <div><span class="kicker">Сертификат</span><div>По итогам курса</div></div>
-            <div><span class="kicker">Скидки</span><div>-10% на второй курс</div></div>
+        <div class="card" style="margin-top:18px;padding:24px">
+          <div class="grid" style="grid-template-columns:repeat(4,1fr);gap:20px">
+            <div><span class="kicker" style="font-size:11px">Бонус</span><div style="font-size:13px">Бесплатный вводный урок</div></div>
+            <div><span class="kicker" style="font-size:11px">Материалы</span><div style="font-size:13px">Полный доступ к программе, чеклисты</div></div>
+            <div><span class="kicker" style="font-size:11px">Сертификат</span><div style="font-size:13px">По итогам курса</div></div>
+            <div><span class="kicker" style="font-size:11px">Скидки</span><div style="font-size:13px">-10% на второй курс</div></div>
           </div>
         </div>
       </div>
