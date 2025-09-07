@@ -996,34 +996,41 @@
     <h2>Как проходит занятие</h2>
     <div class="grid" style="grid-template-columns:repeat(2,1fr); gap:20px;">
       
-      <div class="video" style="display:flex; justify-content:center; align-items:center; padding:0; background:none;">
-        <a href="https://www.youtube.com/watch?v=-5uSds5l6CA" target="_blank" style="
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: #FF0000;
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 6px;
-        ">Смотреть видео на YouTube</a>
+      <div class="video" style="position:relative; cursor:pointer; max-width:100%; padding-top:56.25%;">
+        <!-- Миниатюра -->
+        <img src="https://img.youtube.com/vi/-5uSds5l6CA/hqdefault.jpg" 
+             alt="Видео 1" 
+             style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover;">
+        
+        <!-- Кнопка воспроизведения поверх картинки -->
+        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);
+                    font-size:40px; color:white; text-shadow: 0 0 10px black;">▶</div>
       </div>
       
-      <div class="video" style="display:flex; justify-content:center; align-items:center; padding:0; background:none;">
-        <a href="#" target="_blank" style="
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: #FF0000;
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 6px;
-        ">Смотреть видео на YouTube</a>
+      <div class="video" style="position:relative; cursor:pointer; max-width:100%; padding-top:56.25%;">
+        <img src="https://img.youtube.com/vi/ID_ВИДЕО/hqdefault.jpg" 
+             alt="Видео 2" 
+             style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover;">
+        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);
+                    font-size:40px; color:white; text-shadow: 0 0 10px black;">▶</div>
       </div>
       
     </div>
     <p class="hint">Записи реальных уроков и самопроб студентов. По запросу пришлём полный урок и программу.</p>
   </div>
 </section>
+
+<script>
+  // Скрипт для открытия видео в iframe при клике
+  document.querySelectorAll('.video').forEach(videoBlock => {
+    videoBlock.addEventListener('click', () => {
+      const videoId = videoBlock.querySelector('img').src.split('/vi/')[1].split('/')[0];
+      videoBlock.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1" 
+                               frameborder="0" allowfullscreen 
+                               style="position:absolute; top:0; left:0; width:100%; height:100%;"></iframe>`;
+    });
+  });
+</script>
 
     <!-- COURSES — секция с курсами и кнопками "Записаться" -->
     <section id="courses">
