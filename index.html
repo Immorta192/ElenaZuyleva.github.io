@@ -990,23 +990,42 @@
       </div>
     </section>
 
-    <!-- VIDEO — секция с видео-уроками -->
-    <section id="video">
-      <div class="wrap">
-        <h2>Как проходит занятие</h2>
-        <div class="grid" style="grid-template-columns:repeat(2,1fr)">
-          <div class="video">
-            <!-- Видео 1 -->
-            <iframe src="https://www.youtube.com/watch?v=-5uSds5l6CA" title="Backstage" frameborder="0" allowfullscreen loading="lazy"></iframe>
-          </div>
-          <div class="video">
-            <!-- Видео 2 -->
-            <iframe src="" title="" frameborder="0" allowfullscreen loading="lazy"></iframe>
-          </div>
-        </div>
-        <p class="hint">Записи реальных уроков и самопроб студентов. По запросу пришлём полный урок и программу.</p>
+   <!-- VIDEO — секция с видео-уроками -->
+<section id="video">
+  <div class="wrap">
+    <h2>Как проходит занятие</h2>
+    <div class="grid" style="grid-template-columns:repeat(2,1fr)">
+      
+      <div class="video">
+        <!-- Видео 1 — кнопка вместо iframe -->
+        <a href="https://www.youtube.com/watch?v=-5uSds5l6CA" target="_blank" style="
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #FF0000;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+        ">Смотреть видео на YouTube</a>
       </div>
-    </section>
+      
+      <div class="video">
+        <!-- Видео 2 — пока пустая кнопка -->
+        <a href="#" target="_blank" style="
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #FF0000;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+        ">Смотреть видео на YouTube</a>
+      </div>
+      
+    </div>
+    <p class="hint">Записи реальных уроков и самопроб студентов. По запросу пришлём полный урок и программу.</p>
+  </div>
+</section>
 
     <!-- COURSES — секция с курсами и кнопками "Записаться" -->
     <section id="courses">
